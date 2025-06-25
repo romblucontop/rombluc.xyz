@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rombluc | Developer Services</title>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512..."
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Montserrat:wght@400;700&display=swap");
+
+        :root {
+            --primary: #6d28d9;
+            --secondary: #10b981;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(109, 40, 217, 0.5);
+            }
+            to {
+                text-shadow: 0 0 15px rgba(109, 40, 217, 0.8),
+                    0 0 20px rgba(16, 185, 129, 0.6);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pulse-scale {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .bg-grid {
+            background-image: linear-gradient(
+                    rgba(30, 41, 59, 0.3) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(30, 41, 59, 0.3) 1px,
+                    transparent 1px
+                );
+            background-size: 30px 30px;
+        }
+
+        .card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(109, 40, 217, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(109, 40, 217, 0.5);
+            box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.2);
+        }
+
+        .service-card {
+            @apply card rounded-xl p-8 flex flex-col justify-center items-start animate-fadeIn;
+        }
+
+        .service-list li::before {
+            content: "•";
+            color: var(--secondary);
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-grid min-h-screen">
+    <div class="fixed w-6 h-6 rounded-full bg-purple-500 pointer-events-none mix-blend-screen z-50 opacity-20 transform -translate-x-1/2 -translate-y-1/2" id="cursor-trailer"></div>
+
+    <nav class="fixed w-full z-40 backdrop-blur-md bg-opacity-80 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div><span class="text-2xl font-bold gradient-text glow">rombluc</span></div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#services" class="px-3 py-2 rounded-md text-sm font-medium hover:text-purple-400">Services</a>
+                        <a href="#skills" class="px-3 py-2 rounded-md text-sm font-medium hover:text-emerald-400">Skills</a>
+                        <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium hover:text-purple-400">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-600 filter blur-3xl opacity-70 animate-pulse"></div>
+            <div class="absolute top-2/3 right-1/3 w-96 h-96 rounded-full bg-emerald-600 filter blur-3xl opacity-40 animate-pulse delay-1000"></div>
+        </div>
+        <div class="relative z-10 flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 mb-12 lg:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="gradient-text">Custom Development</span><br />
+                    <span class="text-white">Solutions</span>
+                </h1>
+                <p class="text-lg text-slate-300 mb-8 max-w-lg">
+                    I craft high-performance applications, scripts, and mods tailored to your needs. From
+                    game hacking to full‑stack development, I've got you covered.
+                </p>
+                <div class="flex space-x-4">
+                    <a
+                        href="#contact"
+                        class="contact-btn px-8 py-3 bg-gradient-to-r from-purple-600 to-emerald-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition"
+                        >Get in Touch</a
+                    >
+                    <a
+                        href="#services"
+                        class="px-8 py-3 border border-purple-500 text-purple-400 font-bold rounded-full hover:bg-purple-900 hover:bg-opacity-30 transition"
+                        >Explore Services</a
+                    >
+                </div>
+            </div>
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="relative floating">
+                    <div class="absolute -inset-4 rounded-2xl bg-gradient-to-r from-purple-600 to-emerald-500 opacity-70 blur-lg"></div>
+                    <div class="relative bg-slate-900 rounded-xl p-8 max-w-md w-full border border-slate-800 shadow-2xl service-card">
+                        <h3 class="text-xl font-bold mb-4 text-white">Services Offered</h3>
+                        <ul class="service-list space-y-2 text-slate-300">
+                            <li>Game Modding</li>
+                            <li>Script Development</li>
+                            <li>Automation Tools</li>
+                            <li>Full‑Stack Applications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                <span class="gradient-text">Specialized</span> Services
+            </h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">
+                I offer a range of development services tailored to your specific requirements.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Game Scripting -->
+            <div class="card rounded-xl p-8 hover:shadow-lg">
+                <div class="w-14 h-14 rounded-lg bg-purple-900 bg-opacity-50 flex items-center justify-center mb-6">
+                    <i class="fas fa-gamepad text-2xl text-purple-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-white">Game Scripting</h3>
+                <p class="text-slate-400 mb-4">
+                    Custom Lua/C++ scripts for FiveM, Roblox, and other platforms.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-purple-300">FiveM</span>
+                    <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-purple-300">Roblox</span>
+                    <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-purple-300">Minecraft</span>
+                    <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-purple-300">Lua</span>
+                </div>
+            </div>
+            <!-- Application Development -->
+            <div class="card rounded-xl p-8 hover:shadow-lg">
+                <div class="w-14 h-14 rounded-lg bg-emerald-900 bg-opacity-50 flex items-center justify-center mb-6">
+                    <i class="fas fa-laptop-code text-2xl text-emerald-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-white">App Development</h3>
+                <p class="text-slate-400 mb-4">
+                    High‑performance apps in Python, C#, Go, or C++.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-emerald-300">Python</span>
+                    <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-emerald-300">C#</span>
+                    <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-emerald-300">Go</span>
+                    <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-emerald-300">C++</span>
+                </div>
+            </div>
+            <!-- Web Development -->
+            <div class="card rounded-xl p-8 hover:shadow-lg">
+                <div class="w-14 h-14 rounded-lg bg-blue-900 bg-opacity-50 flex items-center justify-center mb-6">
+                    <i class="fas fa-globe text-2xl text-blue-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-white">Discord Bots</h3>
+                <p class="text-slate-400 mb-4">
+                    Proffessional custom Discord bots for both public and private servers, with optional hosting.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-blue-300">JavaScript</span>
+                    <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-blue-300">HTML/CSS</span>
+                    <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-blue-300">React</span>
+                    <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-blue-300">Node.js</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                <span class="gradient-text">Get in</span> Touch
+            </h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">
+                Interested in working together? Reach out via Discord.
+            </p>
+        </div>
+        
+        <div class="max-w-2xl mx-auto bg-slate-900 rounded-xl p-8 border border-slate-800 shadow-lg">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 flex justify-center">
+                    <div class="relative pulse">
+                        <div class="absolute -inset-4 rounded-full bg-gradient-to-r from-purple-600 to-emerald-500 opacity-50 blur-lg"></div>
+                        <div class="relative w-40 h-40 rounded-full bg-slate-800 flex items-center justify-center border-2 border-purple-500">
+                            <i class="fab fa-discord text-6xl text-purple-400"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h3 class="text-2xl font-bold mb-4">Contact via Discord</h3>
+                    <p class="text-slate-400 mb-6">
+                        For all inquiries, collaborations, or project discussions, 
+                        message me on Discord at:
+                    </p>
+                    <div class="bg-slate-800 rounded-lg p-4 inline-block">
+                        <div class="flex items-center justify-center space-x-2">
+                            <i class="fab fa-discord text-purple-400"></i>
+                            <span class="code-font text-lg font-bold">@rombluc.xyz</span>
+                            <button id="copy-btn" class="ml-2 text-slate-400 hover:text-white transition">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="copied-notice" class="mt-2 text-sm text-emerald-400 opacity-0 transition">Copied to clipboard!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <span class="text-2xl font-bold gradient-text">rombluc</span>
+                <p class="text-slate-500 mt-2">Developer & Scripting Specialist</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-slate-400 hover:text-purple-400 transition">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="#" class="text-slate-400 hover:text-blue-400 transition">
+                    <i class="fab fa-discord text-xl"></i>
+                </a>
+            </div>
+        </div>
+        <div class="mt-8 text-center text-sm text-slate-500" id="copyrightnotice">
+            Loading copyright notice...
+        </div>
+    </footer>
+
+    <script>
+        console.log("Domain rombluc.xyz redirected to hosting page successfully!");
+        // Cursor trailer effect
+        const trailer = document.getElementById("cursor-trailer");
+        
+        window.onmousemove = e => {
+            const x = e.clientX,
+                  y = e.clientY;
+            
+            trailer.animate({
+                left: `${x}px`,
+                top: `${y}px`
+            }, { 
+                duration: 800,
+                fill: "forwards"
+            });
+        }
+        
+        // Copy Discord username
+        const copyBtn = document.getElementById("copy-btn");
+        const copiedNotice = document.getElementById("copied-notice");
+        
+        copyBtn.addEventListener("click", () => {
+            navigator.clipboard.writeText("rombluc.xyz").then(() => {
+                copiedNotice.classList.remove("opacity-0");
+                setTimeout(() => {
+                    copiedNotice.classList.add("opacity-0");
+                }, 2000);
+            });
+        });
+
+        const copyrightNotice = document.getElementById("copyrightnotice");
+        const currentYear = new Date().getFullYear();
+        copyrightNotice.textContent = `© ${currentYear} rombluc.xyz. All rights reserved.`;
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animate elements when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.card, .skill-icon').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
